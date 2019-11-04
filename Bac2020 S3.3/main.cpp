@@ -5,7 +5,7 @@ using namespace std;
     Ideea unui algoritm ar fi de a retine toate elementele intr-un vector , dar datorita numarului extrem de mare 1 miliard
     observam ca avem nevoie doar de actualul element si precedentul (spre exemplu sirului lui fibonnaci , programare dinamica) ;
     La fiecare pas aflam numarul de numere care lipseste dintre actual si precedent , pt ca e sortat descrescator
-    Timpul algoritmului este liniar O(n) , spatiu auxiliar O(1)
+    Timpul algoritmului este liniar O(n) , n - reprezinta numarul de numere din fisier 
     Implementare / Rezolvare : Florin PRicopie
 */
 int main()
@@ -18,10 +18,10 @@ int main()
     while(!cin.eof())
     {
         cin>>a;
-        if(!ok && a<=n) // initial avem nevoie sa aflam numarul de numere care lipseste de la n
+        if(!ok && a<=n) // initial avem nevoie sa aflam numarul de numere care lipseste de la n pana la a
         {
             ok = true;
-            if(a < n)
+            if(a < n) // daca a == n atunci numarul de numere care lipsesc e 0 , dar aplicand formula e -1 , care va influenta rezultatul
                 nr += (n-a);
         }
         else if(b != 0  && b>a)
